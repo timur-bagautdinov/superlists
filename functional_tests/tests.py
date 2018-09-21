@@ -1,10 +1,10 @@
+from django.test import LiveServerTestCase
 from selenium import webdriver
 from selenium.webdriver.common.keys import Keys
 import time
-import unittest
 
 
-class NewVisitorTest(unittest.TestCase):
+class NewVisitorTest(LiveServerTestCase):
     """
     Test for a new visitor
     """
@@ -30,7 +30,7 @@ class NewVisitorTest(unittest.TestCase):
         """
         test: become a list and get its later
         """
-        self.browser.get('http://localhost:8000')
+        self.browser.get(self.live_server_url)
 
         self.assertIn('To-Do', self.browser.title)
         header_text = self.browser.find_element_by_tag_name('h1').text
