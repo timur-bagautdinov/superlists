@@ -66,7 +66,7 @@ class NewVisitorTest(LiveServerTestCase):
         self.wait_for_row_in_list_table('2: Make the fly of peacock feathers')
         self.wait_for_row_in_list_table('1: Buy peacock feathers')
 
-        self.fail('End Test!')
+        #self.fail('End Test!')
 
     def test_multiple_users_can_start_lists_at_different_urls(self):
         self.browser.get(self.live_server_url)
@@ -99,4 +99,5 @@ class NewVisitorTest(LiveServerTestCase):
         page_text = self.browser.find_element_by_tag_name('body').text
         self.assertNotIn('Buy peacock feathers', page_text)
         self.assertIn('Buy milk', page_text)
-        
+
+        self.fail('End Test!')
